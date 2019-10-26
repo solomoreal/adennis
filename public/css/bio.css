@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  background: #fbfbfb;
+  font-size: 1em;
+  line-height: 1.4;
+  box-sizing: border-box;
+  color: #242424;
+  font-family: "Roboto", sans-serif;
+}
+a {
+  text-decoration: none;
+ 
+}
+
+header{
+  display: flex;
+  justify-content: space-around;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  width: 100%;
+  z-index: 3;
+  posi
+}
+
+header:hover{
+  background: #fff;
+  color: #333!important;
+}
+
+nav ul li{
+  display: inline;
+  margin: 10px;
+}
+
+ul li .links {
+  color: #fff;
+}
+
+.branding-logo h2{
+  color: #c30000;
+}
+
+.slider{
+  background: #fff;
+  position: absolute;
+}
+
+.slider img {
+  width: 100%;
+  position: fixed;
+}
+
+.btn-btn{
+  color: #fff;
+  background: #c30000;
+ 
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+
+
+
+
+
+
+
+ul li {
+  list-style: none;
+}
+
+.user-bio {
+  padding: 40px 0;
+  text-align: center;
+  position: relative;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+}
+
+
+.user-ids {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+ul li {
+  /* margin-left: -2.3rem; */
+}
+
+.staff-img {
+  max-width: 400px;
+  height: 250px;
+  border: solid 10px #fdf4f4;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px 4px rgba(0,0,0,0.4);
+  margin: 1rem 0;
+}
+.staff-img img {
+  width: 200px;
+  height: 230px;
+}
+
+.staff-details li {
+  padding: 0.4rem 0;
+  font-size: 1rem;
+
+}
+.staff-details .name {
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+.identity-img img{
+  height:280px;
+  width: 500px;
+  margin: 1rem 0;
+  box-shadow: 2px 2px 10px 4px rgba(0,0,0,0.4);
+}
+
+.display-info {
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 2px 2px 10px 4px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin: 1rem 0;
+
+}
+.deployment {
+  margin: 2rem 0 ;
+}
+.deployment .name {
+  font-size: 1.5rem;
+}
+
+select {
+  background: none;
+  padding: 10px;
+}
+select option {
+  font-size: 1rem;
+  padding: 2px;
+}
+
+.company-remark {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+
+@media screen and (max-width: 480px) {
+
+  body {
+    padding: 3rem;
+  }
+  .user-ids {
+    display: flex;
+    flex-direction: column;
+  }
+  .user-bio h4 {
+    position: absolut;
+  left: 0;
+  }
+  .user-bio {
+    padding: 5px 0;
+  }
+
+  img {
+    max-width: 100%;
+    margin: 2rem;
+  }
+  .staff-img {
+    max-width: 200px;
+  }
+}
