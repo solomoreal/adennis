@@ -20,6 +20,7 @@ Route::get('bios','HomeController@bios')->name('bios');
 Route::post('store_bio','HomeController@storeBios')->name('storeBio');
 Route::post('check_staff','HomeController@checkStaff')->name('checkStaff');
 Route::get('remove/{id}','HomeController@remove')->name('remove');
+Route::post('postContact','HomeController@postContact')->name('postContact');
 
 Auth::routes();
 

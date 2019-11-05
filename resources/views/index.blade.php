@@ -336,7 +336,9 @@
         <div class="form">
           <div id="sendmessage">Your message has been sent. Thank you!</div>
           <div id="errormessage"></div>
-          <form action="" method="post" role="form" class="contactForm">
+          <form action="{{route('postContact')}}" method="POST">
+            {{ csrf_field() }}
+          
             <div class="form-row">
               <div class="form-group col-md-6">
                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
@@ -344,8 +346,7 @@
                 <div class="validation"></div>
               </div>
               <div class="form-group col-md-6">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
-                  data-rule="email" data-msg="Please enter a valid email" />
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email">
                 <div class="validation"></div>
               </div>
             </div>
@@ -355,7 +356,7 @@
               <div class="validation"></div>
             </div>
             <div class="form-group">
-              <textarea class="form-control" name="message" rows="5" data-rule="required"
+              <textarea class="form-control" name="body" rows="5" data-rule="required"
                 data-msg="Please write something for us" placeholder="Message"></textarea>
               <div class="validation"></div>
             </div>
@@ -443,9 +444,9 @@
   <script src="{{asset('lib/lightbox/js/lightbox.min.js')}}"></script>
   <script src="{{asset('lib/touchSwipe/jquery.touchSwipe.min.js')}}"></script>
   <!-- Contact Form JavaScript File -->
-  <script src="{{asset('contactform/contactform.js')}}"></script>
+  {{-- <script src="{{asset('contactform/contactform.js')}}"></script> --}}
 
   <!-- Template Main Javascript File -->
   <script src="{{asset('js/main.js')}}"></script>
-
+{{--  --}}
 @endsection

@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Bio;
+use Mail;
+use Notification;
+use App\Notifications\MailSent;
 
 class HomeController extends Controller
 {
@@ -14,7 +17,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth')->except(['bio','checkStaff']);
+        $this->middleware('auth')->except(['bio','checkStaff','postContact']);
     }
 
     /**
@@ -83,5 +86,31 @@ class HomeController extends Controller
         $bio = Bio::findOrFail($id);
         $bio->delete();
         return back();
+    }
+
+    public function postContact(Request $request){
+        $this->validate($request,[
+            'email' => 'required|email',
+            'subject' => 'min:3',
+            'body' => 'string',
+            'name' => 'string'
+        ]);
+
+        $data = [
+            'email' => $request->email,
+            'subject' => $request->subject,
+            'bodyMessage' => $request->body,
+            'name' => $request->name
+        ];
+
+        Mail::send('email.contact', $data, function($message) use ($data){
+            $message->from($data['email']);
+            $message->to('mail@mail.com');
+            $message->subject($data['subject']);
+        });
+
+        Notification::route('mail', $request->email)
+            ->notify(new MailSent());
+            return back();
     }
 }
